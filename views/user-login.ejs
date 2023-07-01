@@ -1,0 +1,79 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1 style="text-align: center; color: #333;">User Details</h1>
+
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="card">
+        <div class="card-body">
+
+          
+          <h4>Welcome, <%= user.firstname %> <%= user.lastname %>!</h4>
+          <!-- <% const userEmail = user.username.toLowerCase(); %>
+    <% const userImage = userImageMapping[userEmail] || '/images/img1.jpg'; %>
+    <img src="<%= userImage %>" alt="User Image" class="user-image"> -->
+          <p><strong>Email:</strong> <%= user.username %></p>
+          <p><strong>Date of Birth:</strong> <%= user.dob.toDateString() %></p>
+          <p><strong>Gender:</strong> <%= user.gender %></p>
+          <p><strong>Contact:</strong> <%= user.contact %></p>
+          <p><strong>Vehicle Number:</strong> <%= user.vehicleNo %></p>
+          <p><strong>Status:</strong> <%= user.status %></p>
+          <!-- Add any additional user details you want to display -->
+          <% if (user.status === 'stolen') { %>
+            <p><b>We deeply regret for the incovenience caused. Please don't worry, our officials are doing their best to locate your vehicle and would keep updating you on the situation. Please cooperate so that we could help you in the best possible way.</b></p>
+            <p><b>Keep in contact!</b></p>
+            <p><b>For any queries contact at 0130-2234157 or email at vehicle_verification@gmail.com</b></p>
+            <div class="light blinking-red right"></div>
+          <% } else { %>
+            <div class="light blinking-green right"></div>
+                        <p><b>For any queries contact at 0130-2234157 or email at vehicle_verification@gmail.com</b></p>
+
+          <% } %>
+
+          <a href="/logout" class="btn btn-dark">Logout</a>
+
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .light {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .right {
+    animation: blink 1s infinite;
+  }
+
+  .blinking-red {
+    background-color: #ff0000;
+  }
+
+  .blinking-green {
+    background-color: #00ff00;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<%- include('partials/footer') %>

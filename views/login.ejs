@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<style>
+  .card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    padding: 30px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+  
+  .icon {
+    position: relative;
+  }
+
+  .icon i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #777;
+  }
+
+  .car-icon {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .car-icon i {
+    font-size: 120px;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<div class="car-icon">
+  <i class="fas fa-car"></i>
+</div>
+<div class="container mt-5">
+  <h1 style="text-align: center; color: #333;">Welcome to the Login Page - Vehicle Verification System</h1>
+
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route for User login -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email" style="color: #555; font-weight: bold;">
+                <i class="fas fa-envelope"></i> Email
+              </label>
+              <div class="icon">
+                <input type="email" class="form-control" name="username" style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px 35px 10px 30px; width: 100%; margin-bottom: 20px; color: #555;">
+                <i class="fas fa-envelope" style="left: 10px;"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" style="color: #555; font-weight: bold;">
+                <i class="fas fa-lock"></i> Password
+              </label>
+              <div class="icon">
+                <input type="password" class="form-control" name="password" style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px 35px 10px 30px; width: 100%; margin-bottom: 20px; color: #555;">
+                <i class="fas fa-lock" style="left: 10px;"></i>
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-dark">
+                <i class="fas fa-sign-in-alt"></i> Login
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+<%- include('partials/footer') %>
