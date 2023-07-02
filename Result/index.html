@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #343434;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .outer-container {
+      background-color: #F6F6F6;
+      padding: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .blink {
+      animation: blinker 1s linear infinite;
+    }
+
+    .red-light {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+      animation: blinker 1s linear infinite;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .password-input {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .submit-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+
+    .password-placeholder::placeholder {
+      color: transparent;
+    }
+  </style>
+  <script>
+    function validatePassword() {
+      var password = "123";
+      var enteredPassword = document.getElementById("password").value;
+
+      if (enteredPassword === password) {
+        document.getElementById("passwordForm").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="outer-container">
+    <form id="passwordForm">
+      <h1>Please enter the password:</h1>
+      <input type="password" id="password" class="password-input" placeholder="Enter password" required>
+      <button type="button" onclick="validatePassword()" class="submit-button">Submit</button>
+    </form>
+
+    <div id="content" style="display: none;">
+      <h1>Welcome, Chitvan!</h1>
+
+      <img src="img.jpg" alt="image" width="150" height="150" />
+      <p><span class="label">Email:</span> chitvans20@gmail.com</p>
+      <p><span class="label">Date of Birth:</span> Tue Jan 01 2002</p>
+      <p><span class="label">Gender:</span> Male</p>
+      <p><span class="label">Contact:</span> 9845698345</p>
+      <p><span class="label">Vehicle Number:</span> HR 05 AB 9875</p>
+      <p><span class="label">Status:</span> <span id="status">Stolen</span></p>
+
+      <div class="alert">
+        <span class="red-light blink"></span>
+        <span>Alert: Vehicle Stolen!</span>
+      </div>
+
+      <p>
+        We deeply regret the inconvenience caused. Please don't worry, our officials are doing their best to locate your
+        vehicle and will keep updating you on the situation. Please cooperate so that we can assist you in the best
+        possible way.
+      </p>
+
+      <p>Keep in contact!</p>
+
+      <p>For any queries, contact us at <a href="tel:01302234157">0130-2234157</a> or email us at
+        <a href="mailto:vehicle_verification@gmail.com">vehicle_verification@gmail.com</a>.</p>
+    </div>
+  </div>
+</body>
+
+</html>
